@@ -11,9 +11,12 @@ private:
 	Course* _currentCourse;
 
 public:
+	Professor(const std::string& name, int professorID) : Staff(name, professorID) {}
 	void assignCourse(Course* p_course);
 	void doClass();
 	void closeCourse();
+	int professorID;
+
 };
 
 #endif

@@ -10,11 +10,13 @@
 #include "Headmaster.hpp"
 #include "Form.hpp"
 #include "Singleton.hpp"
+#include "Professor.hpp"
 
 int main() {
 
     Secretary secretary;
     Headmaster headmaster;
+    Professor professor("Nome do Professor", 123);
 
     StudentList& studentList = StudentList::getInstance();
     StaffList& staffList = StaffList::getInstance();
@@ -26,10 +28,12 @@ int main() {
     Course course("Física", 666);
     Room room("Sala 01", 99);
 
+
     studentList.addStudent(&student);
     staffList.addStaffMember(&faxineira);
     courseList.addCourse(&course);
     roomList.addRoom(&room);
+    professor.assignCourse(&course);
 
     for (size_t i = 0; i < studentList.students.size(); i++) {
         Student* student = studentList.students[i];

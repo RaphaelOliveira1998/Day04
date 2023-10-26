@@ -7,10 +7,10 @@
 
 class Staff {
 public:
-    std::string name;
+    std::string staffName;
     int staffID;
 
-    Staff(std::string _name, int _staffID) : name(_name), staffID(_staffID) {}
+    Staff(const std::string& name, int id) : staffName(name), staffID(id) {}
 
 };
 
